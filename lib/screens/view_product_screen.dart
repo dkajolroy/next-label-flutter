@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:next_label/controller/cart_controller.dart';
 import 'package:next_label/models/product_model.dart';
 
 class ViewProductScreen extends StatelessWidget {
@@ -7,6 +9,7 @@ class ViewProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[200],
@@ -152,18 +155,20 @@ class ViewProductScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20)),
                                   foregroundColor: Colors.white),
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.addToCart(item);
+                              },
                               child: SizedBox(
                                 width: screenSize.width - 40,
                                 height: 30,
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("Go To Cart"),
+                                    Text("Add to cart"),
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Icon(Icons.arrow_forward)
+                                    Icon(Icons.shopping_cart)
                                   ],
                                 ),
                               )),

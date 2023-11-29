@@ -10,11 +10,19 @@ class AccountScreen extends StatelessWidget {
         title: const Text("APP BAR"),
       ),
       body: const Center(
-        child: Text(
-          "Account",
-          style: TextStyle(fontSize: 30),
-        ),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Kajol Roy",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "shrikajol@gmail.com",
+            style: TextStyle(fontSize: 16),
+          ),
+        ],
+      )),
     );
   }
 }

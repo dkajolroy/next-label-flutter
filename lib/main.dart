@@ -51,7 +51,7 @@ class NavigationMain extends StatelessWidget {
                 HomeScreen(),
                 CartScreen(),
                 WishlistScreen(),
-                AccountScreen()
+                AccountScreen(),
               ],
             ),
             bottomNavigationBar: const BottomNav());

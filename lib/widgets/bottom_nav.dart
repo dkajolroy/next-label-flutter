@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:next_label/controller/cart_controller.dart';
 import 'package:next_label/controller/navigation_controller.dart';
 
 class BottomNav extends StatelessWidget {
@@ -10,7 +9,6 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final cartColtroller = Get.put(CartController());
     return Container(
       padding: const EdgeInsets.all(10),
       child: GNav(
@@ -51,7 +49,7 @@ class BottomNav extends StatelessWidget {
               iconActiveColor: Colors.pink,
               textColor: Colors.pink,
               icon: Icons.shopping_bag_outlined,
-              text: 'Cart${cartColtroller.cartItems.length}',
+              text: 'Cart',
             ),
             GButton(
               backgroundColor: Colors.orange[100],
